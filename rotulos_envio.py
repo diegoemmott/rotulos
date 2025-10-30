@@ -1,11 +1,5 @@
 
-import streamlit as st
-import pandas as pd
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import mm
-import tempfile
-import os
+
 
 # 📁 Buscar cliente en Excel
 def obtener_nombre_cliente(codigo_cliente, df_clientes):
@@ -76,3 +70,4 @@ if st.button("🎯 Generar etiquetas") and nombre_cliente and facturas and canti
         st.download_button("📥 Descargar PDF", data=open(tmp.name, "rb").read(), file_name="etiquetas_envio.pdf", mime="application/pdf")
 
         os.unlink(tmp.name)
+
